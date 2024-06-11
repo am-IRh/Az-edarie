@@ -35,3 +35,44 @@ useEffect: برای ارسال درخواست به سرور برای دریاف�
 
 ### ساختار پروژه
 پروژه به صورت ساختار پوشه‌ای زیر سازمان‌دهی شده است:
+مان‌دهی شده است:
+/project-root
+/components
+Header.js
+Footer.js
+PropertyCard.js
+/pages
+index.js
+property.js
+/styles
+global.css
+PropertyCard.css
+/api
+properties.js
+/utils
+axiosConfig.js
+
+
+### توضیح کدهای کلیدی
+#### کامپوننت PropertyCard
+```javascript
+import React from 'react';
+import styled from 'styled-components';
+
+const Card = styled.div`
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 8px;
+`;
+
+const PropertyCard = ({ property }) => (
+  <Card>
+    <h2>{property.name}</h2>
+    <p>{property.description}</p>
+    <span>{property.price} تومان</span>
+  </Card>
+);
+
+export default PropertyCard;
+```
